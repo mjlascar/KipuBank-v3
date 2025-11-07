@@ -1,5 +1,14 @@
 (+) se reestructuro el estado del contrato, haciendo a USDC como activo unico
 
+(+) las funciones receive() y fallback() ya no pueden ser usadas! ya que no aceptan parametros, y necesitamos que el usuario nos diga la cantidad mínima de USDC que acepta recibir,
+	porque sin eso un bot puede hacer un sanwich attack manipulando el precio de uniswap justo antes de nuestro swap y robando valor al usuario
+	-Por lo anterior, ahora existen 3 caminos para depositar (USDC, ETH, SWAPTOKEN), todos almacenan USDC
+
+(+) en los caminos a depositar tokens que no sean USDC, se puede dar el caso que el expected amount devuelto por Uniswap sea menor que el que nos llegue,
+	decidi dejarlo de esta manera, ya que el rebalse del tope se puede considerar insignificante
+
+
+
 Despliegue (con Remix)
 1.Abre KipuBank-v2.sol en Remix IDE.
 
