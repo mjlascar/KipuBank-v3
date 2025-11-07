@@ -1,3 +1,5 @@
+(+) se reestructuro el estado del contrato, haciendo a USDC como activo unico
+
 Despliegue (con Remix)
 1.Abre KipuBank-v2.sol en Remix IDE.
 
